@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Companion Session Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">10-Minute Companion Session</p>
+          <h1>Resident Connection Guide</h1>
+          <p class="app__subtitle">
+            AI suggestions are generated only from confirmed resident facts. When in doubt, defer to your
+            judgment and the resident.
+          </p>
+        </div>
+        <div class="status-card">
+          <span class="status-card__label">Session Timer</span>
+          <span class="status-card__time" id="timerDisplay">10:00</span>
+          <div class="status-card__controls">
+            <button class="button button--primary" id="startTimer">Start</button>
+            <button class="button button--ghost" id="pauseTimer">Pause</button>
+            <button class="button button--ghost" id="resetTimer">Reset</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="app__main">
+        <section class="card">
+          <h2>Companion Commitments</h2>
+          <ul class="checklist">
+            <li>Only ask questions based on facts the resident has confirmed.</li>
+            <li>Never introduce new personal details or assumptions.</li>
+            <li>Pause if the resident seems tired or uncomfortable.</li>
+            <li>Close calmly, affirming the resident’s choices.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <h2>Confirmed Resident Facts</h2>
+            <p>Add only details the resident has explicitly confirmed.</p>
+          </div>
+          <div class="facts">
+            <div class="facts__input">
+              <input
+                type="text"
+                id="factInput"
+                placeholder="e.g., Loves jazz music"
+                aria-label="Enter confirmed fact"
+              />
+              <button class="button button--primary" id="addFact">Add Fact</button>
+            </div>
+            <div class="facts__list" id="factsList">
+              <p class="facts__empty">No facts yet. Add at least 2 to unlock suggestions.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>10-Minute Flow</h2>
+          <div class="timeline">
+            <div class="timeline__item">
+              <span class="timeline__minute">0-2 min</span>
+              <div>
+                <h3>Warm welcome</h3>
+                <p>Introduce yourself, confirm comfort, and ask for permission to chat.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__minute">2-7 min</span>
+              <div>
+                <h3>Guided conversation</h3>
+                <p>Use the suggested questions below, staying with what they confirm.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__minute">7-10 min</span>
+              <div>
+                <h3>Calm closing</h3>
+                <p>Summarize, thank them, and let them know what happens next.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <h2>Suggested Questions</h2>
+            <p>Generated from confirmed facts only. Edit or skip anytime.</p>
+          </div>
+          <div class="suggestions" id="questionSuggestions">
+            <p class="suggestions__empty">Add facts to see safe, tailored questions.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <h2>Calm Closing Prompts</h2>
+            <p>Gentle wrap-ups grounded in what the resident confirmed.</p>
+          </div>
+          <div class="suggestions" id="closingSuggestions">
+            <p class="suggestions__empty">Add facts to see closing prompts.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
